@@ -23,3 +23,9 @@ function calcPolygon(input) {
   }
   return output
 }
+
+function init() {
+  console.log("loaded")
+}
+
+window.addEventListener("load", init)
