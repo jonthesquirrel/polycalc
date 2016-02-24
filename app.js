@@ -73,8 +73,26 @@ function calcTrigger() {
   document.querySelector("#output-text").innerHTML = convertText(output)
 }
 
+function storageSave(event) {
+  console.log(event)
+  if (event.target.classList.contains("stored")) {
+    localStorage[event.target.id] = event.target.value
+  }
+}
+
+function storageLoad() {
+  [].forEach.call(document.querySelectorAll(".stored"), function(elm) {
+    if (localStorage[elm.id] === undefined) {
+      localStorage[elm.id] = ""
+    }
+    elm.value = localStorage[elm.id]
+  })
+}
+
 window.addEventListener("load", function onLoad() {
+  storageLoad()
   document.querySelector("#calc-trigger").addEventListener("click", calcTrigger)
+  document.body.addEventListener("keyup", storageSave)
 })
 
 //
