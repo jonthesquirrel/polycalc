@@ -7,17 +7,45 @@
   <title>Polygon Coodinate Calculator</title>
 
   <!-- maybe link a central base stylesheet from code.pixalia.co for all tool pages -->
+  <link rel="stylesheet" href="style.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
-  <script async src="app.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script> -->
+
 </head>
 <body>
 
-  <p>Polygon Coordinate Calculator</p>
+  <p>
+    Polygon Coordinate Calculator - (<a href="http://code.pixalia.co">code.pixalia.co</a>)
+  </p>
+
+  <p>
+    Note: the Y coordinate here should be the Z coordinate when in minecraft, if building horizontally.
+    <br>
+    Tip: you can place the vertices in game using the coordinates in F3, then use worldedit //line to connect them (or build the line by eye).
+  </p>
 
   <hr>
 
-  <p><a href="http://code.pixalia.co">Pixalia</a></p>
+  <!-- <div id="visual"></div> -->
 
+  <ul>
+    <li><input type="text" id="input-n" placeholder="3"> number of sides (same as number of vertices)</li>
+    <li><input type="text" id="input-r" placeholder="50"> radius (circumscribed)</li>
+    <li><input type="text" id="input-a" placeholder="0"> rotation angle (counterclockwise in radians)</li>
+    <li><input type="text" id="input-cx" placeholder="0"> x coordinate of the polygon's center</li>
+    <li><input type="text" id="input-cy" placeholder="0"> y coordinate of the polygon's center</li>
+    <br>
+    <li><input type="text" id="input-round" placeholder="0"> round to decimal place (0-20)</li>
+    <br>
+    <button id="calc-trigger">Calculate</button>
+  </ul>
+
+  <hr>
+
+  <p>
+    Vertices: <pre id="output-text">[]</pre>
+  </p>
+
+  <script src="app.js"></script>
 </body>
 </html>
