@@ -15,7 +15,7 @@ function calcPolygon(input) {
   //a: counterclockwise rotation angle in radians
   //cx: center x (offset)
   //cy: center y (offset)
-  //round: number of decimal places to keep
+  //round: number of decimal places to keep (0-20)
   var output = []
   for (var i = 1; i <= input.n; i++) {
     output.push({
